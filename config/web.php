@@ -12,6 +12,7 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'language' => 'ru-RU',
+    'defaultRoute' => 'category/index',
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
