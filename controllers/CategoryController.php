@@ -9,7 +9,7 @@
 namespace app\controllers;
 use app\models\Category;
 use app\models\Product;
-
+use Yii;
 
 class CategoryController extends AppController
 {
@@ -19,8 +19,9 @@ class CategoryController extends AppController
         return $this->render('index',compact('hits'));
     }
 
-    public function actionView($id){
-        $id = Yii::$app->request->get('cat_id');
-        debug($id);
+    public function actionView($cat_id){
+        $cat_id = Yii::$app->request->get('cat_id');
+        $products = Product::find()->where(['cat_id' => $cat_id])->all();
+        return $this->render('view',compact('products'));
     }
 }

@@ -19,6 +19,10 @@ $config = [
             'layout' => 'admin',
             'defaultRoute' => 'order/index',
         ],
+
+        'api' => [
+            'class' => 'app\modules\api\Api',
+        ],
     ],
     'components' => [
         'request' => [
